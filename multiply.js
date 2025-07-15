@@ -8,7 +8,7 @@ function multiply(a, b) {
   if (Array.isArray(a)) {
     return a.map((number) => number * 2);
   } else if (typeof a === "number" && b === undefined) {
-    return Math.pow(a, 2); // square the number if only one is passed
+    return a*2; 
   } else if (typeof a === "number" && typeof b === "number") {
     return a * b;
   } else {
