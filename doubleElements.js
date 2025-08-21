@@ -36,7 +36,7 @@ const sentence = word.reduce((acc,curr) => {
 
 console.log(sentence);
 
-const fruits = ["banana","apple","pineappple","orange","banana","pineapple","orange"];
+const fruits = ["banana","apple","pineapple","orange","banana","pineapple","orange"];
 
 const fruitCounts = fruits.reduce((acc,fruit) =>{
     acc[fruit] = (acc[fruit] || 0) +1;

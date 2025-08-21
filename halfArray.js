@@ -6,5 +6,5 @@
 
 function halve(arr){
 var half = Math.ceil(arr.length/2);
-return arr.slice(0,half);
+return arr.slice(0,arr.length/2);
 }
