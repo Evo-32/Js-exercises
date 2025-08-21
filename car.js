@@ -10,6 +10,20 @@ class Car{
     updateYear(newYear){
         this.year = newYear;
     }
+
+    set year(value){
+        if(value < 1885) throw 'Year not valid'
+        this._year = value;
+    }
+
+    get year(){
+        return this._year;
+    }
+
+    get age(){ 
+        return new Date().getFullYear() - this.year;
+    }
+    
 }
 
 class ElectricCar extends Car{
@@ -27,6 +41,8 @@ class ElectricCar extends Car{
  let car1 = new Car('Toyota','Corolla');
  car1.getInfo()
  car1.updateYear(2012)
- let car2 = new ElectricCar('Toyota','Corolla',2025,75)
+ console.log(car1.age)
+ let car2 = new ElectricCar('Toyota','Corolla',2000,75)
  car2.charge()
+console.log(car2.age)
  
