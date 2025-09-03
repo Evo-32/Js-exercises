@@ -126,3 +126,59 @@
 // const p1= new Person('john',16)
 // p1.sayHello()
 // Person.info()
+
+
+// class BankAccount{
+//     constructor(balance){
+//         this.balance = balance
+//     }
+//     static withdraw(account,amount){
+//         if(account.balance <= 0 || account.balance< amount){
+//             console.log(`Unsufficient funds balance is ${account.balance}`)
+//         }else{
+//             account.balance -= amount
+//             console.log(`Withdrawal successful new balance is ${account.balance}`)
+//         }
+
+//     }
+
+//     static getBalance(account){
+//         console.log(`The current balance is ${account.balance}`)
+//     }
+// }
+// let draw = new BankAccount(20000)
+// BankAccount.withdraw(draw,3000)
+
+
+class Product{
+    constuctor(name,price){
+        this.name = name,
+        this.price = price
+    }
+    get tax(){
+        return this.price * 0.1
+    }
+}
+
+class Wallet{
+    #balance;
+    #pinCode;
+    constructor(initialbalance,pincode){
+        this.#balance = initialbalance,
+        this.#pinCode = pincode
+    }
+    #validatePin(pin){
+        return pin === this.#pinCode
+    }
+    checkBalance(pin){
+        if(this.#validatePin(pin)){
+            return `Current balance is ${this.#balance}`
+        }else{
+            return `Acess denied : Incorrect pin`
+        }
+    }
+}
+
+let wallet  = new Wallet(5000,'321')
+console.log(wallet.checkBalance('002'))
+console.log(wallet.checkBalance('321'))
