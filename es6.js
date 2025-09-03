@@ -2,22 +2,18 @@
 // age = 30;
 // console.log(age);
 
-
 // const name = 'Alice';
 // const city = 'paris';
 // console.log(`Hello, my name is ${name} and i live in ${city}`)
 
-
 // add = (a,b) =>  a+b;
 // console.log(add(1,2))
-
 
 // function greet(name='Guest'){
 //     console.log(`Hello ${name}`)
 // }
 // greet('Bob');
 // greet()
-
 
 // const colors = ['red','green','blue'];
 // const [color1,color2] = colors
@@ -32,12 +28,10 @@
 // const {title : topic,year: period} = book
 // console.log(topic,period);
 
-
 // const arr1 = [1,2];
 // const arr2 = [3,4];
 // const merged = [...arr1,...arr2]
 // console.log(merged)
-
 
 // function sum(...nums){
 //     let total = 0;
@@ -48,13 +42,11 @@
 // }
 // console.log(sum(1,2,3,4))
 
-
 // import {add} from './math.js'
 // import {multiply} from './math.js'
 
 // console.log(add(1,2))
 // console.log(multiply(1,2))
-
 
 // class Car{
 //     constructor(make,year){
@@ -68,7 +60,6 @@
 // }
 // const c1 = new Car('Range Rover', 2000)
 // console.log(`My car is ${Car.age(c1.year)} old.`)
-
 
 // class Animal{
 //     constructor(name){
@@ -92,7 +83,6 @@
 // const myCow = new Cow('cow')
 // myCow.speak()
 
-
 // class Rectangle{
 //     constructor(width,length){
 //         this.width = width
@@ -110,7 +100,6 @@
 // rect.value = 5
 // console.log(rect.area)
 
-
 // class   Person{
 //     constructor(name,age){
 //         this.name = name,
@@ -126,7 +115,6 @@
 // const p1= new Person('john',16)
 // p1.sayHello()
 // Person.info()
-
 
 // class BankAccount{
 //     constructor(balance){
@@ -149,36 +137,51 @@
 // let draw = new BankAccount(20000)
 // BankAccount.withdraw(draw,3000)
 
+// class Wallet{
+//     #balance;
+//     #pinCode;
+//     constructor(initialbalance,pincode){
+//         this.#balance = initialbalance,
+//         this.#pinCode = pincode
+//     }
+//     #validatePin(pin){
+//         return pin === this.#pinCode
+//     }
+//     checkBalance(pin){
+//         if(this.#validatePin(pin)){
+//             return `Current balance is ${this.#balance}`
+//         }else{
+//             return `Acess denied : Incorrect pin`
+//         }
+//     }
+// }
+// let wallet  = new Wallet(5000,'321')
+// console.log(wallet.checkBalance('002'))
+// console.log(wallet.checkBalance('321'))
 
-class Product{
-    constuctor(name,price){
-        this.name = name,
-        this.price = price
-    }
-    get tax(){
-        return this.price * 0.1
-    }
-}
 
-class Wallet{
-    #balance;
-    #pinCode;
-    constructor(initialbalance,pincode){
-        this.#balance = initialbalance,
-        this.#pinCode = pincode
-    }
-    #validatePin(pin){
-        return pin === this.#pinCode
-    }
-    checkBalance(pin){
-        if(this.#validatePin(pin)){
-            return `Current balance is ${this.#balance}`
-        }else{
-            return `Acess denied : Incorrect pin`
-        }
-    }
-}
+// function* countUpTo(limit) {
+//   for (let i = 1; i <= limit; i++) {
+//     yield i;
+//   }
+// }
+// for(const num of countUpTo(10)){
+//     console.log(num)
+// }
 
-let wallet  = new Wallet(5000,'321')
-console.log(wallet.checkBalance('002'))
-console.log(wallet.checkBalance('321'))
+
+// function* alphabetGenerator(arr){
+//     for(let chr of arr){
+//         yield(chr);
+//     }
+// }
+// function* combinedGenerator(){
+//     yield*(alphabetGenerator(['a','b','c']))
+//     yield(1)
+//     yield(2)
+//     yield(3)
+// }
+// for(let values of combinedGenerator()){
+//     console.log(values)
+// }
+
