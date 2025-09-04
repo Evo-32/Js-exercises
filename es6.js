@@ -116,26 +116,34 @@
 // p1.sayHello()
 // Person.info()
 
-// class BankAccount{
-//     constructor(balance){
-//         this.balance = balance
-//     }
-//     static withdraw(account,amount){
-//         if(account.balance <= 0 || account.balance< amount){
-//             console.log(`Unsufficient funds balance is ${account.balance}`)
-//         }else{
-//             account.balance -= amount
-//             console.log(`Withdrawal successful new balance is ${account.balance}`)
-//         }
-
+// class BankAccount {
+//   constructor(balance) {
+//     this.balance = balance;
+//   }
+//   static withdraw(account, amount) {
+//     if (amount < 0) {
+//       throw new Error("The amount must be positive");
 //     }
 
-//     static getBalance(account){
-//         console.log(`The current balance is ${account.balance}`)
+//     if (account.balance <= 0 || account.balance < amount) {
+//       throw new Error(`Unsufficient funds balance is ${account.balance}`);
 //     }
+//     account.balance -= amount;
+//     console.log(`Withdrawal successful new balance is ${account.balance}`);
+//   }
+
+//   static getBalance(account) {
+//     console.log(`The current balance is ${account.balance}`);
+//   }
 // }
-// let draw = new BankAccount(20000)
-// BankAccount.withdraw(draw,3000)
+// let draw = new BankAccount(20000);
+// try {
+//   BankAccount.withdraw(draw, 3000);
+//   BankAccount.withdraw(draw, -2000);
+//   BankAccount.withdraw(draw, 50000);
+// } catch (error) {
+//   console.log("Error:", error.message);
+// }
 
 // class Wallet{
 //     #balance;
@@ -159,7 +167,6 @@
 // console.log(wallet.checkBalance('002'))
 // console.log(wallet.checkBalance('321'))
 
-
 // function* countUpTo(limit) {
 //   for (let i = 1; i <= limit; i++) {
 //     yield i;
@@ -168,7 +175,6 @@
 // for(const num of countUpTo(10)){
 //     console.log(num)
 // }
-
 
 // function* alphabetGenerator(arr){
 //     for(let chr of arr){
@@ -184,4 +190,93 @@
 // for(let values of combinedGenerator()){
 //     console.log(values)
 // }
+
+// class CountDown{
+//     constructor(start){
+//         this.start = start
+//     }
+//     [Symbol.iterator](){
+//         let current = this.start
+
+//         return {
+//             next(){
+//                 if(current >= 0){
+//                     return{value: current--, done:false};
+//                 }else{
+//                     return {done: true};
+//                 }
+//             }
+//         }
+//     }
+// }
+// const countdown = new CountDown(5);
+// for (const num of countdown) {
+//   console.log(num);
+// }
+
+// let id = Symbol('ID')
+// const Car={
+//     brand: 'Range rover',
+//     model: 'xxx',
+//     [id]: 123
+// }
+// console.log(Car)
+// console.log(Car[id])
+// const symbols= (Object.getOwnPropertySymbols(Car))
+// console.log(Car[symbols[0]])
+
+// const ap = Symbol.for('app.secret')
+// const app = Symbol.for('app.secret')
+// console.log(ap ===  app)
+
+// class Range{
+//     constructor(from,to){
+//         this.from = from,
+//         this.to = to
+//     }
+//     [Symbol.iterator](){
+//         let start = this.from;
+//         let end = this.to;
+//         return{
+//             next(){
+//                 if(start<= end){
+//                     return {value:start++, done:false}
+//                 }else{
+//                     return {done:true}
+//                 }
+//             }
+//         }
+//     }
+// }
+// const range = new Range(5,9);
+// for(let num of range){
+//     console.log(num)
+// }
+
+// function getUniqueNumbers(arr){
+//     return [...new Set(arr)]
+// }
+// console.log(getUniqueNumbers([1,2,2,3,4,4,5]));
+
+// const userRoles = new Map()
+// userRoles.set(1,'author')
+// userRoles.set(2,'singer')
+// userRoles.set(3,'instructor')
+// console.log(userRoles.get(1))
+// console.log(userRoles.has(3))
+// console.log(userRoles.has(5))
+// for(let [id,role] of userRoles){
+//     console.log(`user ${id} has ${role}`)
+// }
+
+
+
+// function getMinMax(numbers){
+//     let minMax = [Math.min(...numbers),Math.max(...numbers)]
+//     return minMax
+// }
+// const [min,max] = getMinMax([2,3,4,1,5,9,4,5])
+// console.log(min)
+// console.log(max)
+
 
