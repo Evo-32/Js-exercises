@@ -358,3 +358,19 @@
 //     console.log(message +5)
 //     return message
 // })
+
+
+class Greeter{
+    constructor(name){
+        this.name = name
+    }
+    sayHello(){
+        const greeting = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log(`Hello ${this.name}`)
+            },1000)
+        })
+    }
+}
+let greeting = new Greeter('mary')
+greeting.sayHello()
