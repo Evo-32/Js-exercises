@@ -360,17 +360,48 @@
 // })
 
 
-class Greeter{
-    constructor(name){
-        this.name = name
-    }
-    sayHello(){
-        const greeting = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                console.log(`Hello ${this.name}`)
-            },1000)
-        })
-    }
-}
-let greeting = new Greeter('mary')
-greeting.sayHello()
+// class Greeter{
+//     constructor(name){
+//         this.name = name
+//     }
+//     sayHello(){
+//         const greeting = new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 console.log(`Hello ${this.name}`)
+//             },1000)
+//         })
+//     }
+// }
+// let greeting = new Greeter('mary')
+// greeting.sayHello()
+
+
+// class BankAccount{
+//     constructor(initialBalance){
+//         this.initialBalance = initialBalance
+//     }
+//     transfer(amount){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(() => {
+//                 if(this.initialBalance < amount ){
+//                 reject('Insufficient funds')
+//             }
+//             else{
+//                 this.initialBalance -= amount
+//                 resolve(`The balance now is :  ${this.initialBalance}`)
+//             }
+//             }, 500);
+//         })
+//     }
+// }
+// const giveaway = new BankAccount(2000);
+// giveaway.transfer(500).then((message) => {
+//     console.log(message)
+// })
+// giveaway.transfer(3000).catch((message)=>{
+//     console.log(message)
+// })
+
+
+
+
