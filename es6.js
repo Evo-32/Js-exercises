@@ -280,3 +280,81 @@
 // console.log(max)
 
 
+// class Library{
+//     #books;
+//     constructor(){
+//         this.#books = [];
+//     }
+//     addbook(book){
+//         this.#books.push(book);
+//     }
+//     [Symbol.iterator](){
+//         let index = 0;
+//         const books = this.#books;
+//         return{
+//             next(){
+//                 if(index<books.length){
+//                     return{value:books[index++],done:false}
+//                 }
+//                 else{
+//                     return{done:true}
+//                 }
+//             }
+//         }
+//     }
+//     get totalbooks(){
+//         return this.#books.length;
+//     }
+//     countBooksByAuthor(){
+//         const authorCount = new Map()
+//         for(const book of this.#books){
+//             const count = authorCount.get(book.author) || 0 ;
+//             authorCount.set(book.author,count+1)
+//         }
+//         return authorCount;
+//     }
+// }
+// const mylibrary = new Library();
+// mylibrary.addbook({ title: "Book1", author: "Alice" });
+// mylibrary.addbook({ title: "Book2", author: "Bob" });
+// mylibrary.addbook({ title: "Book3", author: "Alice" });
+// console.log(mylibrary.countBooksByAuthor())
+
+
+
+// const promise = new Promise((resolve,reject) =>{
+//     setTimeout(()=>{
+//         resolve('Promise resolved')
+//     })
+// })
+// promise.then((message)=>{
+//     console.log(message)
+// })
+
+
+// const promise = new Promise((resolve,reject) =>{
+//     setTimeout(()=>{
+//         reject('Promise rejected')
+//     })
+// })
+// promise.catch((message)=>{
+//     console.log(message)
+// })
+
+
+// const promise = new Promise((resolve,reject) =>{
+//     setTimeout(()=>{
+//         let num = 10;
+//         resolve(num)
+//     },1000)
+// })
+// promise.then((message)=>{
+//     console.log(message)
+//     return message
+// }).then((message)=>{
+//     console.log(message +5)
+//     return message
+// }).then((message)=>{
+//     console.log(message +5)
+//     return message
+// })
