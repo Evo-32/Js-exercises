@@ -404,4 +404,53 @@
 
 
 
+// const obj={
+//     one: 1,
+//     two: 2,
+//     three : 3
+// }
 
+// const handler = {
+//     get(target,prop){
+//         console.log(`accessed ${prop}`)
+//         return target[prop];
+//     }
+// }
+// const proxyObj =  new Proxy(obj,handler)
+// console.log(proxyObj.one)
+
+
+// const person = {
+//     age : 12
+// }
+// const handler = {
+//     set(obj,prop,value){
+//         if(prop === 'age' && value < 0){
+//             console.log('Age must not be less than 0')
+//             return false;
+//         }else{
+//             console.log(`The age is ${value}`)
+//             return true
+//         }
+//     }
+// }
+// const proxyPerson = new Proxy(person,handler)
+// proxyPerson.age = 6
+
+
+// const person = {
+//     name: ''
+// }
+// const handler = {
+//     set(obj,prop,value){
+//         console.log(`Name is ${value.toUpperCase()}`)
+//         return obj[prop];
+//     }
+// }
+// const proxyPerson = new Proxy(person,handler)
+// proxyPerson.name = 'jane doe'
+
+
+const counter = {
+    
+}
