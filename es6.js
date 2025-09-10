@@ -451,6 +451,69 @@
 // proxyPerson.name = 'jane doe'
 
 
-const counter = {
-    
+// class Quared{
+//     constructor(numbers){
+//         this.numbers = numbers
+//     }
+//     squarenbers(){
+//         console.log(this.numbers.map(nber => nber*nber))
+//     }
+// }
+// let numbers = [1,2,3,4,5];
+// let quarednber = new Quared(numbers)
+// quarednber.squarenbers()
+
+
+// let obj1 = { a: 1, b: 2 };
+// let obj2 = { b: 3, c: 4 };
+// console.log({...obj1,...obj2})
+
+
+// function debugTag(strings, ...values){
+//     console.log('strings:', strings);
+//     console.log('value',values);
+// }
+// let name = 'mary';
+// let age = 20;
+// debugTag`My name is ${name} and I am ${age} years old.`;
+
+
+// let nums = [10, 20];
+// console.log(2 in nums)
+// let person = { name: "Alice", age: 22 };
+// console.log('age' in person)
+// console.log('salary' in person)
+// let user = { id: 1, username: "coder", role: "admin" };
+// for(let key in user){
+//     console.log(key)
+// }
+
+
+// function upper(strings, ...values) {
+//   let result = ""; 
+//   for (let i = 0; i < strings.length; i++) {
+//     result += strings[i]; 
+//     if (i < values.length) {
+//       result += values[i].toUpperCase();
+//     }
+//   }
+//   return result;
+// }
+// let name = "alice";
+// console.log(upper`Hello ${name}!`)
+
+
+function money(strings,...values){
+    let result = ''
+    for(let i=0; i<strings.length;i++){
+        result += strings[i];
+        if(i< values.length){
+            result += '$'+ values[i].toFixed(2);
+        }
+    }
+    return result
 }
+let price = 49.983479;
+console.log(money`The book costs ${price} only.`);
+
+
