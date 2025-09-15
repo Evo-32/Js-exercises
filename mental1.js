@@ -30,6 +30,25 @@
 // console.log(assignId(person))
 
 
+const occurrence = (arr) => {
+  let result = {}
+  for(let {type} of arr){
+    result[type] = (result[type] || 0)+1
+  }
+  return result
+}
+const items = [
+  { type: 'fruit' },
+  { type: 'vegetable' },
+  { type: 'fruit' },
+  { type: 'fruit' },
+  { type: 'vegetable' },
+  { type: 'grain' },
+];
+const counts = occurrence(items);
+console.log(counts);
+
+
 // const names = (arr) =>{
 //   let result = []
 //   for(const {name,age} of arr){
